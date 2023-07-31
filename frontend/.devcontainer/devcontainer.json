@@ -1,0 +1,17 @@
+{
+    "name": "nodejs remote development",
+    "dockerComposeFile": ["../../docker-compose.yml"],
+    "service": "frontend",
+    "remoteUser": "node",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "sudo chown node node_modules",
+    "customizations": {
+        "extensions": [
+        "dbaeumer.vscode-eslint",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "esbenp.prettier-vscode",
+        "formulahendry.code-runner"
+        ]
+    }
+      
+}
