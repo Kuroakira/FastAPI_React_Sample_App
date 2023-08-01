@@ -1,9 +1,12 @@
 import React from 'react';
 import { useEffect } from "react";
 import axios from "axios";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CsrfToken } from './types/types';
 import { useAppSelector } from "./app/hooks";
 import { selectCsrfState } from "./slices/appSlice";
+import { Auth } from "./components/Auth";
+import { Todo } from "./components/Todo";
 
 function App() {
   const csrf = useAppSelector(selectCsrfState);
@@ -11,7 +14,7 @@ function App() {
   useEffect(() => {
     const getCsrfToken = async () => {
       const res = await axios.get<CsrfToken>(
-        `${process.env.REACT_APP_API_URL}/csrftoken`
+        `/api/csrftoken`
       )
       axios.defaults.headers.common['X-CSRF-Token'] = res.data.csrf_token
     }
@@ -19,9 +22,12 @@ function App() {
   }, [csrf])
 
   return (
-    <div>
-
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Auth />}/>
+        <Route path='/todo' element={<Todo />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

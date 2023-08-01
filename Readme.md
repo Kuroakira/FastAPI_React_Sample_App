@@ -1,3 +1,6 @@
+# Reference
+https://github.com/GomaGoma676/react-farm-stack/tree/main
+
 # Setup environment
 ## Chrome extension
 - redux dev tools
