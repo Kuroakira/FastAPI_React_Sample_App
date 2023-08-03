@@ -14,7 +14,7 @@ services:
     working_dir: /workspace
     volumes:
       - ./frontend:/workspace:cached
-      - node_modules:/workspace/node_modules
+      - docker_vm_node_modules:/workspace/node_modules
     networks:
       - app-tier
 
@@ -25,7 +25,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8000:8000
-    command: uvicorn main:app --host 0.0.0.0 --reload
+    command: sleep infinity
+    # command: uvicorn main:app --host 0.0.0.0 --reload
     working_dir: /workspace
     volumes:
       - ./fast_api:/workspace:cached
@@ -53,4 +54,4 @@ networks:
     driver: bridge
 
 volumes:
-  node_modules:
+  docker_vm_node_modules:

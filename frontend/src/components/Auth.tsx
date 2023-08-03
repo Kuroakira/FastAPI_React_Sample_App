@@ -1,6 +1,7 @@
+import React from 'react'
 import { FC } from 'react';
-import { RefreshIcon } from "@heroicons/react/solid";
-import { BadgeCheckIcon } from "@heroicons/react/solid";
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
+import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import { useProcessAuth } from "../hooks/useProcessAuth";
 
 export const Auth:FC = () => {
@@ -25,7 +26,7 @@ export const Auth:FC = () => {
     return (
         <div className='flex justify-center items-center flex-col min-h-screen text-gray-600 font-mono'>
             <div className='flex items-center'>
-                <BadgeCheckIcon className="h-8 w-8 mr-2 text-blue-500" />
+                <CheckBadgeIcon className="h-8 w-8 mr-2 text-blue-500" />
                 <span className='text-center text-3xl font-extrabold'>
                     FARM Stack web app
                 </span>
@@ -63,7 +64,7 @@ export const Auth:FC = () => {
                     </button>
                 </div>
             </form>
-            <RefreshIcon
+            <ArrowPathIcon
                 onClick={() => setIsLogin(!isLogin)}
                 className="h-8 w-8 my-2 text-blue-500 cursor-pointer"
             />
