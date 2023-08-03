@@ -10,7 +10,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"]
   },
   output: {
-    path: path.resolve(__dirname, "dist/"),
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -35,10 +35,15 @@ module.exports = {
   ],
   devServer: {
     static: {
-        directory: path.join(__dirname, "public"),
-      },
-      port: 3000,
-      hot: true,
+        directory: `${__dirname}/public`
+    },
+    port: 3000,
+    hot: true,
+    proxy: {
+      '/api': {
+        target: 'http://fast_api:8000'
+      }
+    }
   },
   optimization: {
 	minimizer: [new CssMinimizerPlugin()],
