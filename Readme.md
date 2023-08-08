@@ -1,5 +1,6 @@
 # Reference
 https://github.com/GomaGoma676/react-farm-stack/tree/main
+-> Change for updated module version
 
 # Setup environment
 ## Chrome extension
